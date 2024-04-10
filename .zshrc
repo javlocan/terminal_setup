@@ -1,4 +1,3 @@
-# Default Config for JAVLOCAN
 
 export PATH=~/.local/bin:$PATH
 
@@ -57,6 +56,7 @@ source "/usr/share/fzf/key-bindings.zsh"
 
 # aliases
 alias vim="nvim"
+alias code="foot --override=pad=0x0 nvim & disown && exit"
 alias ls="lsd"
 alias lss="lsd --tree --depth=2 -a -I .git -I .github"
 alias k="kubectl"
@@ -74,7 +74,7 @@ alias gplr="git pull --rebase"
 alias gplrc="git rebase --continue"
 alias gps="git push"
 alias gpsuo="git push --set-upstream origin"
-alias gdf="git diff"
+alias gff="git diff"
 
 # prompt
 source "$HOME/.config/zsh/purs_setup"
