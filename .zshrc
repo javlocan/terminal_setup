@@ -56,7 +56,8 @@ source "/usr/share/fzf/key-bindings.zsh"
 
 # aliases
 alias vim="nvim"
-alias code="foot --override=pad=0x0 nvim & disown && exit"
+# alias code="foot --override=pad=0x0 nvim & disown && exit"
+alias code="wezterm -e nvim & disown && exit"
 alias ls="lsd"
 alias lss="lsd --tree --depth=2 -a -I .git -I .github"
 alias k="kubectl"
