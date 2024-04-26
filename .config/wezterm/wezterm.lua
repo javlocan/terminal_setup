@@ -97,6 +97,23 @@ c.keys = {
 	bind_if(is_outside_vim, "j", "CTRL", a.ActivatePaneDirection("Up")),
 	bind_if(is_outside_vim, "k", "CTRL", a.ActivatePaneDirection("Down")),
 	bind_if(is_outside_vim, "l", "CTRL", a.ActivatePaneDirection("Right")),
+	bind_if(is_inside_vim, "t", "CTRL", a.SpawnTab("DefaultDomain")),
+
+	bind_if(
+		is_outside_vim,
+		"w",
+		"CTRL",
+		a.ActivateKeyTable({
+			name = "window",
+			timeout_milliseconds = 1000,
+		})
+	),
+}
+
+c.key_tables = {
+	window = {
+		{ key = "q", action = a.CloseCurrentPane({ confirm = true }) },
+	},
 }
 
 return c
