@@ -49,7 +49,6 @@ autoload -U compinit; compinit
 source "${PLUGINS_DIR}/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 source "${PLUGINS_DIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 source "${PLUGINS_DIR}/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-source "${PLUGINS_DIR}/zsh-thefuck-git/zsh-thefuck.plugin.zsh"
 source "/usr/share/fzf/completion.zsh"
 source "/usr/share/fzf/key-bindings.zsh"
 
