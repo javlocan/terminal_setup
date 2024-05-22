@@ -1,6 +1,8 @@
 local w = require("wezterm")
 local c = {}
 
+local M = {}
+
 w.enable_wayland = false
 c.enable_wayland = w.enable_wayland
 
@@ -13,12 +15,23 @@ c.tab_bar_at_bottom = w.tab_bar_at_bottom
 w.use_fancy_tab_bar = false
 c.use_fancy_tab_bar = w.use_fancy_tab_bar
 
+---@class font
+---@field name string
+---@field family string
+
+---@type { key: string, value: font}
+M.fonts = {
+	jetbrains = "JetBrainsMonoNerdFontMono",
+	aesthetic_iosevka = "AestheticIosevka Nerd Font",
+	victor = "VictorMonoNerdFontMono",
+}
+
 c.font_rules = {
 	{
 		intensity = "Normal",
 		italic = false,
 		font = w.font_with_fallback({
-			{ family = "JetBrainsMonoNerdFontMono", weight = "Light" },
+			{ family = M.fonts.jetbrains, weight = "Light" },
 			{ family = "JetBrains Mono", weight = "Regular" },
 		}),
 	},
@@ -26,7 +39,7 @@ c.font_rules = {
 		intensity = "Bold",
 		italic = false,
 		font = w.font_with_fallback({
-			{ family = "JetBrainsMonoNerdFontMono", weight = "ExtraBold" },
+			{ family = M.fonts.jetbrains, weight = "ExtraBold" },
 			{ family = "JetBrains Mono", weight = "ExtraBold" },
 		}),
 	},
@@ -34,7 +47,7 @@ c.font_rules = {
 		intensity = "Normal",
 		italic = true,
 		font = w.font_with_fallback({
-			{ family = "VictorMonoNerdFontMono", weight = "Light", style = "Italic" },
+			{ family = M.fonts.victor, weight = "Light", style = "Italic" },
 			{ family = "JetBrains Mono", weight = "Regular", style = "Italic" },
 		}),
 	},
